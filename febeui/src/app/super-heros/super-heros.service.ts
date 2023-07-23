@@ -10,18 +10,18 @@ export class SuperHerosService {
 
   constructor(private http:HttpClient) {}
   get(){
-    return this.http.get<SuperHeros[]>("http://localhost:3000/super-heros");
+    return this.http.get<SuperHeros[]>(`http://localhost:3000/super-heros`);
   }
   create(superHeros:CreateOrUpdateSuperHero){
-    return this.http.post("http://localhost:3000/super-heros",superHeros);
+    return this.http.post(`http://localhost:3000/super-heros`,superHeros);
   }
   getById(id:string){
-    return this.http.get<SuperHeros>('http://localhost:3000/super-heros/${id}'); 
+    return this.http.get<SuperHeros>(`http://localhost:3000/super-heros/${id}`); 
   }
   update(id:string,superHero:CreateOrUpdateSuperHero){
-    return this.http.put('http://localhost:3000/super-heros/${id}',superHero);
+    return this.http.put(`http://localhost:3000/super-heros/${id}`,superHero);
   }
   delete(id:string){
-    return this.http.delete('http://localhost:3000/super-heros/${id}');
+    return this.http.delete(`http://localhost:3000/super-heros/${id}`);
   }
 }
